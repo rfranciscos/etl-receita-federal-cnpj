@@ -1,17 +1,14 @@
 import fs from 'fs';
 import readline from 'readline';
-import stream from 'stream';
 import { ReceitaFederalProvider } from './provider';
 
 export class ReceitaFederal {
   inStream: fs.ReadStream;
-  outStream: stream;
   rl: readline.Interface;
 
   constructor(path: string) {
     this.inStream = fs.createReadStream(path);
-    this.outStream = new stream();
-    this.rl = readline.createInterface(this.inStream, this.outStream as any);
+    this.rl = readline.createInterface(this.inStream);
   }
 
   execute = async () => {
