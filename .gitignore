@@ -5,3 +5,4 @@ config/*.json
 src/cli/tasks/_response-samples
 images
 debug.ts
+data

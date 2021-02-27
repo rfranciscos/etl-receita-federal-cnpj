@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/rfranciscos/script-template#readme",
   "dependencies": {
-    "@types/node": "^13.13.2",
     "cli-task": "^0.7.5",
     "commitizen": "^2.10.1",
     "conventional-changelog-cli": "^2.0.5",
@@ -45,5 +44,8 @@
   },
   "engines": {
     "node": "^12.16.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31"
   }
 }
