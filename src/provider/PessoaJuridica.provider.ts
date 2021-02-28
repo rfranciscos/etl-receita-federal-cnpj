@@ -88,78 +88,41 @@ export class ReceitaFederalProvider {
     };
 
     buildPessoaJuridicaInsertQuery = (data: PessoaJuridica): string => {
-      return `INSERT INTO public."PessoaJuridica" (
-        cnpj,
-        "tipoIdentificadorId",
-        "razaoSocial",
-        "nomeFantasia",
-        "tipoSituacaoId",
-        "dataSituacao",
-        "tipoMotivoSituacaoId",
-        "cidadeExterior",
-        "codigoPais",
-        "nomePais",
-        "tipoNaturezaJuridicaId",
-        "dataIncio",
-        "cnaeFiscal",
-        "tipoLogradouro",
-        logradouro,
-        numero,
-        complemento,
-        bairro,
-        cep,
-        uf,
-        "codigoMunicipio",
-        municipio,
-        telefone,
-        telefone2,
-        fax,
-        email,
-        "qualificacaoResponsavel",
-        "capitalSocial",
-        porte,
-        "opcaoSimples",
-        "dataOpcaoSimples",
-        "dataExclusaoSimples",
-        "opcaoMei",
-        "situacaoEspecial",
-        "dataSituacaoEspecial"
-      ) VALUES(
-        ${data.cnpj},
-        ${data.identificador},
-        ${data.razaoSocial},
-        ${data.nomeFantasia},
-        ${data.situacao},
-        ${data.dataSituacao},
-        ${data.motivoSituacao},
-        ${data.cidadeExterior},
-        ${data.codigoPais},
-        ${data.nomePais},
-        ${data.naturezaJuridica},
-        ${data.dataIncio},
-        ${data.cnaeFiscal},
-        ${data.tipoLogradouro},
-        ${data.logradouro},
-        ${data.numero},
-        ${data.complemento},
-        ${data.bairro},
-        ${data.cep},
-        ${data.uf},
-        ${data.codigoMunicipio},
-        ${data.municipio},
-        ${data.telefone},
-        ${data.telefone2},
-        ${data.fax},
-        ${data.email},
-        ${data.qualificacaoResponsavel},
-        ${data.capitalSocial},
-        ${data.porte},
-        ${data.opcaoSimples},
-        ${data.dataOpcaoSimples},
-        ${data.dataExclusaoSimples},
-        ${data.opcaoMei},
-        ${data.situacaoEspecial},
-        ${data.dataSituacaoEspecial}
-      );`;
+      const cnpj = data.cnpj ? `'${data.cnpj}'` : null;
+      const identificador = data.identificador ? `'${data.identificador}'` : null;
+      const razaoSocial = data.razaoSocial ? `'${data.razaoSocial}'` : null;
+      const nomeFantasia = data.nomeFantasia ? `'${data.nomeFantasia}'` : null;
+      const situacao = data.situacao ? `'${data.situacao}'` : null;
+      const dataSituacao = data.dataSituacao ? `'${data.dataSituacao}'` : null;
+      const motivoSituacao = data.motivoSituacao ? `'${data.motivoSituacao}'` : null;
+      const cidadeExterior = data.cidadeExterior ? `'${data.cidadeExterior}'` : null;
+      const codigoPais = data.codigoPais ? `'${data.codigoPais}'` : null;
+      const nomePais = data.nomePais ? `'${data.nomePais}'` : null;
+      const naturezaJuridica = data.naturezaJuridica ? `'${data.naturezaJuridica}'` : null;
+      const dataIncio = data.dataIncio ? `'${data.dataIncio}'` : null;
+      const cnaeFiscal = data.cnaeFiscal ? `'${data.cnaeFiscal}'` : null;
+      const tipoLogradouro = data.tipoLogradouro ? `'${data.tipoLogradouro}'` : null;
+      const logradouro = data.logradouro ? `'${data.logradouro}'` : null;
+      const numero = data.numero ? `'${data.numero}'` : null;
+      const complemento = data.complemento ? `'${data.complemento}'` : null;
+      const bairro = data.bairro ? `'${data.bairro}'` : null;
+      const cep = data.cep ? `'${data.cep}'` : null;
+      const uf = data.uf ? `'${data.uf}'` : null;
+      const codigoMunicipio = data.codigoMunicipio ? `'${data.codigoMunicipio}'` : null;
+      const municipio = data.municipio ? `'${data.municipio}'` : null;
+      const telefone = data.telefone ? `'${data.telefone}'` : null;
+      const telefone2 = data.telefone2 ? `'${data.telefone2}'` : null;
+      const fax = data.fax ? `'${data.fax}'` : null;
+      const email = data.email ? `'${data.email}'` : null;
+      const qualificacaoResponsavel = data.qualificacaoResponsavel ? `'${data.qualificacaoResponsavel}'` : null;
+      const capitalSocial = data.capitalSocial ? data.capitalSocial : null;
+      const porte = data.porte ? `'${data.porte}'` : null;
+      const opcaoSimples = data.opcaoSimples ? `'${data.opcaoSimples}'` : null;
+      const dataOpcaoSimples = data.dataOpcaoSimples ? `'${data.dataOpcaoSimples}'` : null;
+      const dataExclusaoSimples = data.dataExclusaoSimples ? `'${data.dataExclusaoSimples}'` : null;
+      const opcaoMei = data.opcaoMei ? `'${data.opcaoMei}'` : null;
+      const situacaoEspecial = data.situacaoEspecial ? `'${data.situacaoEspecial}'` : null;
+      const dataSituacaoEspecial = data.dataSituacaoEspecial ? `'${data.dataSituacaoEspecial}'` : null;
+      return `INSERT INTO public."PessoaJuridica" (cnpj,"tipoIdentificadorId","razaoSocial","nomeFantasia","tipoSituacaoId","dataSituacao","tipoMotivoSituacaoId","cidadeExterior","codigoPais","nomePais","tipoNaturezaJuridicaId","dataIncio","cnaeFiscal","tipoLogradouro",logradouro,numero,complemento,bairro,cep,uf,"codigoMunicipio",municipio,telefone,telefone2,fax,email,"qualificacaoResponsavel","capitalSocial",porte,"opcaoSimples","dataOpcaoSimples","dataExclusaoSimples","opcaoMei","situacaoEspecial","dataSituacaoEspecial") VALUES(${cnpj},${identificador},${razaoSocial},${nomeFantasia},${situacao},${dataSituacao},${motivoSituacao},${cidadeExterior},${codigoPais},${nomePais},${naturezaJuridica},${dataIncio},${cnaeFiscal},${tipoLogradouro},${logradouro},${numero},${complemento},${bairro},${cep},${uf},${codigoMunicipio},${municipio},${telefone},${telefone2},${fax},${email},${qualificacaoResponsavel},${capitalSocial},${porte},${opcaoSimples},${dataOpcaoSimples},${dataExclusaoSimples},${opcaoMei},${situacaoEspecial},${dataSituacaoEspecial});\n`;
     };
   }

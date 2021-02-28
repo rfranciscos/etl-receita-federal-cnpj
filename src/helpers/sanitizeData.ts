@@ -1,4 +1,4 @@
-export const sanitizeData = (data: string): string => {
+export const sanitizeData = (data: string): string | null => {
     const newData = data.trim();
-    return newData;
+    return newData !== '' ? newData : null;
 };
