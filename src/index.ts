@@ -12,17 +12,24 @@ export class ReceitaFederal {
   }
 
   execute = async () => {
+    let cycle = 1;
     let numberOfLines = 0;
+    let data = [] as string[];
     const receitaFederalProvider = new ReceitaFederalProvider();
   
     this.rl.on('line', async (line) => {
       if (line.substr(0,1) === '1') {
-        // if (numberOfLines < 10) {
-          const input = receitaFederalProvider.buildPessoaJuridica(line)
-          // console.log(input);
-        // }
+        const pessoaJuridica = receitaFederalProvider.buildPessoaJuridica(line);
+        const query = receitaFederalProvider.buildPessoaJuridicaInsertQuery(pessoaJuridica);
+        data.push(query);
+        numberOfLines++;
+        if (numberOfLines === 10000) {
+          fs.writeFile(`./output/insert-cnpj-${cycle}.sql`, data.join(''), err => console.log(err))
+          cycle += 1;
+          numberOfLines = 0;
+          data = [];
+        }
       }
-      numberOfLines++
     });
   
     this.rl.on('close', () => {
