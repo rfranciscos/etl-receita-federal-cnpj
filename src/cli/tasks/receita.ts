@@ -13,6 +13,6 @@ export const example = `$ npm run bin receita`;
  
 export const execute = (args: string[]) => {
   const name = args.join(' ');
-  const receita = new ReceitaFederal('/home/kidult/dev/personal/extract-pessoa-juridica/data/K3241.K032001K.CNPJ.D01120.L00001')
+  const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/K3241.K03200Y0.D10814.EMPRECSV')
   receita.execute();
 };
