@@ -18,13 +18,13 @@ export class ReceitaFederal {
     const receitaFederalProvider = new ReceitaFederalProvider();
   
     this.rl.on('line', async (line) => {
-      if (line.substr(0,1) === '1') {
+      if (line.substr(0, 1) === '1') {
         const pessoaJuridica = receitaFederalProvider.buildPessoaJuridica(line);
         const query = receitaFederalProvider.buildPessoaJuridicaInsertQuery(pessoaJuridica);
         data.push(query);
         numberOfLines++;
         if (numberOfLines === 10000) {
-          fs.writeFile(`./output/insert-cnpj-${cycle}.sql`, data.join(''), err => console.log(err))
+          fs.writeFile(`./output/insert-cnpj-${cycle}.sql`, data.join(''), err => console.log(err));
           cycle += 1;
           numberOfLines = 0;
           data = [];
