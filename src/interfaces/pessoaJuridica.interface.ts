@@ -13,7 +13,7 @@ export interface PessoaJuridica {
   codigoPais: string | null;
   nomePais: string | null;
   naturezaJuridica: string | null;
-  dataIncio: string | null;
+  dataInicio: string | null;
   cnaeFiscal: string | null;
   tipoLogradouro: string | null;
   logradouro: string | null;
