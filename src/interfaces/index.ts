@@ -7,3 +7,5 @@ export * from './municipios.interface';
 export * from './cnaes.interface';
 export * from './naturezasJuridicas.interface';
 export * from './estabelecimentos.interface';
+export * from './socios.interface';
+export * from './empresas.interface';
