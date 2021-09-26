@@ -1,4 +1,5 @@
-export const sanitizeData = (data: string): string | null => {
-    const newData = data.trim();
-    return newData !== '' ? newData : null;
+export const sanitizeData = <T>(data: string, type?: 'string' | 'number') => {
+    const newData = data.trim().substring(1, data.length - 1);
+    if (newData === '') return null;
+    return type === 'number' ? +newData : newData;
 };
