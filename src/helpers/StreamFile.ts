@@ -1,5 +1,6 @@
 import fs from 'fs';
 import readline from 'readline';
+import { saveFile } from '.';
 
 export class StreamFile {
   inStream: fs.ReadStream;
@@ -21,19 +22,19 @@ export class StreamFile {
       data.push(query);
       this.numberOfLines++;
       if (this.numberOfLines === 10000) {
-        fs.writeFile(`./output/${prefix}-${this.cycle}.sql`, data.join(''), err => console.log(err));
+        saveFile(`${prefix}-${this.cycle}.sql`, data.join(''))
         this.cycle += 1;
         this.numberOfLines = 0;
         data = [];
       }
     });
     this.rl.on('close', () => {
-      console.log(this.numberOfLines);
       if (this.numberOfLines !== 10000) {
-        fs.writeFile(`./output/${prefix}-${this.cycle}.sql`, data.join(''), err => console.log(err));
+        saveFile(`${prefix}-${this.cycle}.sql`, data.join(''))
         this.cycle += 1;
         this.numberOfLines = 0;
         data = [];
+        console.log(this.cycle * 10000 + this.numberOfLines)
       }
   });
   }
