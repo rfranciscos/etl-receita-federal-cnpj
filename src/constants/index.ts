@@ -7,3 +7,8 @@ export enum EPaises {
   'CODIGO' = 0,
   'DESCRICAO' = 1
 };
+
+export enum EMunicipios {
+  'CODIGO' = 0,
+  'DESCRICAO' = 1
+};
