@@ -8,7 +8,7 @@ export class StreamFile {
   numberOfLines: number;
 
   constructor(path: string) {
-    this.inStream = fs.createReadStream(path);
+    this.inStream = fs.createReadStream(path, { encoding: 'binary' });
     this.rl = readline.createInterface(this.inStream);
     this.cycle = 0;
     this.numberOfLines = 0;
