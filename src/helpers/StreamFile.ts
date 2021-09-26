@@ -17,7 +17,7 @@ export class StreamFile {
   readLineAsync = async (inputFunction, prefix) => {
     let data = [] as any[];
     this.rl.on('line', async (line) => {
-      const query = inputFunction(line.split(';'));
+      const query = inputFunction(line.split('";"'));
       data.push(query);
       this.numberOfLines++;
       if (this.numberOfLines === 10000) {

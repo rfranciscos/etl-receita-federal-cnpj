@@ -6,3 +6,4 @@ export * from './paises.interface';
 export * from './municipios.interface';
 export * from './cnaes.interface';
 export * from './naturezasJuridicas.interface';
+export * from './estabelecimentos.interface';

@@ -1,0 +1,31 @@
+export interface Estabelecimentos {
+  cnpjBasico: string;
+  cnpjOrdem: string;
+  cnpjDv: string;
+  identificador: string;
+  situacaoCadastral: string;
+  dataSituacaoCadastral: string;
+  motivoSituacaoCadastral: string;
+  nomeCidadeExterior: string;
+  pais: string;
+  dataInicioAtividade: string;
+  CnaePrincipal: string;
+  CnaeSegundario: string;
+  tipoLogradouro: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  cep: string;
+  uf: string;
+  municipio: string;
+  ddd1: string;
+  telefone1: string;
+  ddd2: string;
+  telefone2: string;
+  dddFax: string;
+  fax: string;
+  email: string;
+  situacaoEspecial: string;
+  dataSituacaoEspecial: string;
+}
