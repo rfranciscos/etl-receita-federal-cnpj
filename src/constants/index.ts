@@ -12,3 +12,13 @@ export enum EMunicipios {
   'CODIGO' = 0,
   'DESCRICAO' = 1
 };
+
+export enum ENaturezasJuridicas {
+  'CODIGO' = 0,
+  'DESCRICAO' = 1
+};
+
+export enum ECNAEs {
+  'CODIGO' = 0,
+  'DESCRICAO' = 1
+};

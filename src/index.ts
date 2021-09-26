@@ -1,5 +1,5 @@
 import { StreamFile } from './helpers';
-import { MunicipiosProvider, PaisesProvider, QualificacaoSociosProvider } from './provider';
+import { CNAEsProvider, MunicipiosProvider, NaturezasJuridicasProvider, PaisesProvider, QualificacaoSociosProvider } from './provider';
 
 export class ReceitaFederal {
   streamFile: StreamFile;
@@ -21,5 +21,15 @@ export class ReceitaFederal {
   municipios = async () => {
     const municipiosProvider = new MunicipiosProvider();
     this.streamFile.readLineAsync(municipiosProvider.getSql, 'municipios')
+  }
+
+  naturezasJuridicas = async () => {
+    const municipiosProvider = new NaturezasJuridicasProvider();
+    this.streamFile.readLineAsync(municipiosProvider.getSql, 'naturezas-juridicas')
+  }
+
+  cnaes = async () => {
+    const municipiosProvider = new CNAEsProvider();
+    this.streamFile.readLineAsync(municipiosProvider.getSql, 'cnaes')
   }
 }
