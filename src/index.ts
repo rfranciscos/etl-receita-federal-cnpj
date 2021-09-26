@@ -5,46 +5,46 @@ export class ReceitaFederal {
   streamFile: StreamFile;
 
   constructor(path: string) {
-    this.streamFile = new StreamFile(path)
+    this.streamFile = new StreamFile(path);
   }
 
-  qualificacaoSocios = async () => {
+  qualificacaoSocios = () => {
     const qualificacaoSociosProvider = new QualificacaoSociosProvider();
-    this.streamFile.readLineAsync(qualificacaoSociosProvider.getSql, 'qualificacao-socios')
+    this.streamFile.readLineAsync(qualificacaoSociosProvider.getSql, 'qualificacao-socios');
   }
 
-  paises = async () => {
+  paises = () => {
     const paisesProvider = new PaisesProvider();
-    this.streamFile.readLineAsync(paisesProvider.getSql, 'paises')
+    this.streamFile.readLineAsync(paisesProvider.getSql, 'paises');
   }
 
-  municipios = async () => {
+  municipios = () => {
     const municipiosProvider = new MunicipiosProvider();
-    this.streamFile.readLineAsync(municipiosProvider.getSql, 'municipios')
+    this.streamFile.readLineAsync(municipiosProvider.getSql, 'municipios');
   }
 
-  naturezasJuridicas = async () => {
+  naturezasJuridicas = () => {
     const municipiosProvider = new NaturezasJuridicasProvider();
-    this.streamFile.readLineAsync(municipiosProvider.getSql, 'naturezas-juridicas')
+    this.streamFile.readLineAsync(municipiosProvider.getSql, 'naturezas-juridicas');
   }
 
-  cnaes = async () => {
+  cnaes = () => {
     const municipiosProvider = new CNAEsProvider();
-    this.streamFile.readLineAsync(municipiosProvider.getSql, 'cnaes')
+    this.streamFile.readLineAsync(municipiosProvider.getSql, 'cnaes');
   }
 
-  estabelecimentos = async () => {
+  estabelecimentos = () => {
     const estabelecimentosProvider = new EstabelecimentosProvider();
-    this.streamFile.readLineAsync(estabelecimentosProvider.getSql, 'estabelecimentos')
+    this.streamFile.readLineAsync(estabelecimentosProvider.getSql, 'estabelecimentos');
   }
 
-  socios = async () => {
+  socios = () => {
     const sociosProvider = new SociosProvider();
-    this.streamFile.readLineAsync(sociosProvider.getSql, 'socios')
+    this.streamFile.readLineAsync(sociosProvider.getSql, 'socios');
   }
   
-  empresas = async () => {
+  empresas = () => {
     const empresasProvider = new EmpresasProvider();
-    this.streamFile.readLineAsync(empresasProvider.getSql, 'empresas')
+    this.streamFile.readLineAsync(empresasProvider.getSql, 'empresas');
   }
 }

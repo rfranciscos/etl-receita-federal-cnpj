@@ -39,4 +39,4 @@ export interface PessoaJuridica {
   dataSituacaoEspecial: string | null;
   filler: string | null;
   fimRegistro: string | null;
-};
+}

@@ -1,1 +1,1 @@
-require('cli-task')
+require('cli-task');

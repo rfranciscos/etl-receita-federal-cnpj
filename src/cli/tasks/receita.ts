@@ -1,4 +1,4 @@
-import { ReceitaFederal } from "../..";
+import { ReceitaFederal } from '../..';
 
 export const description =
   'Receives a file path and build all rows in a insert query of PessoaJuridica';
@@ -13,6 +13,6 @@ export const example = `$ npm run bin receita`;
  
 export const execute = (args: string[]) => {
   const name = args.join(' ');
-  const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/K3241.K03200Y0.D10814.EMPRECSV')
+  const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/K3241.K03200Y0.D10814.EMPRECSV');
   receita.qualificacaoSocios();
 };

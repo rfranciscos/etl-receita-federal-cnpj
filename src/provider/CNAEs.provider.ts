@@ -3,19 +3,19 @@ import { sanitizeData, buildSql } from '../helpers';
 import { Cnaes, Paises } from '../interfaces';
 
 export class CNAEsProvider {
-    build = (data: string[]): Cnaes => {
-      return {
-        code: sanitizeData(data[ECNAEs.CODIGO]) as string,
-        description: sanitizeData(data[ECNAEs.DESCRICAO]) as string,
-      };
-    }
-
-    buildInsertQuery = (data: Cnaes): string => {
-      return buildSql<Cnaes>('INSERT INTO', 'CNAEs', data);
-    }
-
-    getSql = (data: string[]) => {
-      const payload = this.build(data);
-      return this.buildInsertQuery(payload)
-    }
+  build = (data: string[]): Cnaes => {
+    return {
+      code: sanitizeData(data[ECNAEs.CODIGO]) as string,
+      description: sanitizeData(data[ECNAEs.DESCRICAO]) as string,
+    };
   }
+
+  buildInsertQuery = (data: Cnaes): string => {
+    return buildSql<Cnaes>('INSERT INTO', 'CNAEs', data);
+  }
+
+  getSql = (data: string[]) => {
+    const payload = this.build(data);
+    return this.buildInsertQuery(payload);
+  }
+}
