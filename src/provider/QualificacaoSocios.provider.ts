@@ -1,11 +1,12 @@
+import { EQualificacaoSocios } from '../constants';
 import { sanitizeData, buildSql } from '../helpers';
 import { QualificacaoSocios } from '../interfaces';
 
 export class QualificacaoSociosProvider {
     build = (data: string[]): QualificacaoSocios => {
       return {
-        code: sanitizeData(data[0]) as string,
-        description: sanitizeData(data[1]) as string,
+        code: sanitizeData(data[EQualificacaoSocios.CODIGO]) as string,
+        description: sanitizeData(data[EQualificacaoSocios.DESCRICAO]) as string,
       };
     }
 

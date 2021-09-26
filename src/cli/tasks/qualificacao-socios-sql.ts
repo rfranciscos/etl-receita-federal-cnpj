@@ -11,8 +11,7 @@ export const flags = {
 };
 export const example = `$ npm run bin qualificacao-socios-sql`;
  
-export const execute = (args: string[]) => {
-  const name = args.join(' ');
+export const execute = () => {
   const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/F.K03200$Z.D10814.QUALSCSV')
   receita.qualificacaoSocios();
 };
