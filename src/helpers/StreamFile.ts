@@ -14,14 +14,14 @@ export class StreamFile {
     this.numberOfLines = 0;
   }
 
-  readLineAsync = async (inputFunction) => {
+  readLineAsync = async (inputFunction, prefix) => {
     let data = [] as any[];
     this.rl.on('line', async (line) => {
       const query = inputFunction(line.split(';'));
       data.push(query);
       this.numberOfLines++;
       if (this.numberOfLines === 10000) {
-        fs.writeFile(`./output/insert-cnpj-${this.cycle}.sql`, data.join(''), err => console.log(err));
+        fs.writeFile(`./output/${prefix}-${this.cycle}.sql`, data.join(''), err => console.log(err));
         this.cycle += 1;
         this.numberOfLines = 0;
         data = [];
@@ -30,7 +30,7 @@ export class StreamFile {
     this.rl.on('close', () => {
       console.log(this.numberOfLines);
       if (this.numberOfLines !== 10000) {
-        fs.writeFile(`./output/insert-cnpj-${this.cycle}.sql`, data.join(''), err => console.log(err));
+        fs.writeFile(`./output/${prefix}-${this.cycle}.sql`, data.join(''), err => console.log(err));
         this.cycle += 1;
         this.numberOfLines = 0;
         data = [];
