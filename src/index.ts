@@ -24,13 +24,13 @@ export class ReceitaFederal {
   }
 
   naturezasJuridicas = () => {
-    const municipiosProvider = new NaturezasJuridicasProvider();
-    this.streamFile.readLineAsync(municipiosProvider.getSql, 'naturezas-juridicas');
+    const naturezasJuridicasProvider = new NaturezasJuridicasProvider();
+    this.streamFile.readLineAsync(naturezasJuridicasProvider.getSql, 'naturezas-juridicas');
   }
 
   cnaes = () => {
-    const municipiosProvider = new CNAEsProvider();
-    this.streamFile.readLineAsync(municipiosProvider.getSql, 'cnaes');
+    const cnaesProvider = new CNAEsProvider();
+    this.streamFile.readLineAsync(cnaesProvider.getSql, 'cnaes');
   }
 
   estabelecimentos = () => {
