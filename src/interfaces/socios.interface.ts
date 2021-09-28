@@ -1,13 +1,13 @@
 export interface Socios {
   cnpjBasico: string;
-  identificadorSocio: string;
+  identificadorSocioId: string;
   nomeSocio: string;
   cnpjCpf: string;
-  qualificacao: string;
+  qualificacaoId: string;
   inicioSociedade: string;
-  pais: string;
+  paisId: string;
   representanteLegal: string;
   nomeRepresentante: string;
-  qualificacaoRepresentante: string;
-  faixaEtaria: string;
+  qualificacaoRepresentanteId: string;
+  faixaEtariaId: string;
 }

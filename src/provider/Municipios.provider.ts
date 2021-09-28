@@ -5,7 +5,7 @@ import { Paises } from '../interfaces';
 export class MunicipiosProvider {
   build = (data: string[]): Paises => {
     return {
-      code: sanitizeData(data[EMunicipios.CODIGO]) as string,
+      id: sanitizeData(data[EMunicipios.CODIGO]) as string,
       description: sanitizeData(data[EMunicipios.DESCRICAO]) as string,
     };
   }

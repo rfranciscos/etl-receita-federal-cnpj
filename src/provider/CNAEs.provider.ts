@@ -5,7 +5,7 @@ import { Cnaes, Paises } from '../interfaces';
 export class CNAEsProvider {
   build = (data: string[]): Cnaes => {
     return {
-      code: sanitizeData(data[ECNAEs.CODIGO]) as string,
+      id: sanitizeData(data[ECNAEs.CODIGO]) as string,
       description: sanitizeData(data[ECNAEs.DESCRICAO]) as string,
     };
   }

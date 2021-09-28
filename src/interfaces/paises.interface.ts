@@ -1,4 +1,4 @@
 export interface Paises {
-  code: string;
+  id: string;
   description: string;
 }

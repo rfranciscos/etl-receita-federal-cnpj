@@ -5,7 +5,7 @@ import { Paises } from '../interfaces';
 export class PaisesProvider {
   build = (data: string[]): Paises => {
     return {
-      code: sanitizeData(data[EPaises.CODIGO]) as string,
+      id: sanitizeData(data[EPaises.CODIGO]) as string,
       description: sanitizeData(data[EPaises.DESCRICAO]) as string,
     };
   }

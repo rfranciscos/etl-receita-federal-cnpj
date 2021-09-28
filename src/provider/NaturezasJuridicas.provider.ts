@@ -5,7 +5,7 @@ import { NaturezasJuridicas } from '../interfaces';
 export class NaturezasJuridicasProvider {
   build = (data: string[]): NaturezasJuridicas => {
     return {
-      code: sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string,
+      id: sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string,
       description: sanitizeData(data[ENaturezasJuridicas.DESCRICAO]) as string,
     };
   }

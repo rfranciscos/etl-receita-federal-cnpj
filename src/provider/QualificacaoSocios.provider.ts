@@ -5,7 +5,7 @@ import { QualificacaoSocios } from '../interfaces';
 export class QualificacaoSociosProvider {
   build = (data: string[]): QualificacaoSocios => {
     return {
-      code: sanitizeData(data[EQualificacaoSocios.CODIGO]) as string,
+      id: sanitizeData(data[EQualificacaoSocios.CODIGO]) as string,
       description: sanitizeData(data[EQualificacaoSocios.DESCRICAO]) as string,
     };
   }
