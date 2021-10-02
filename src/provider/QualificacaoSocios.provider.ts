@@ -14,7 +14,7 @@ export class QualificacaoSociosProvider {
     return buildSql<QualificacaoSocios>('INSERT INTO', 'QualificacaoSocios', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }

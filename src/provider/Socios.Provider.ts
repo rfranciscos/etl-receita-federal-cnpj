@@ -23,7 +23,7 @@ export class SociosProvider {
     return buildSql<Socios>('INSERT INTO', 'Socios', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }

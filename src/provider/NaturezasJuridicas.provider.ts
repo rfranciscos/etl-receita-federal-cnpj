@@ -14,7 +14,7 @@ export class NaturezasJuridicasProvider {
     return buildSql<NaturezasJuridicas>('INSERT INTO', 'NaturezasJuridicas', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }

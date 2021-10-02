@@ -1,6 +1,6 @@
 import { ECNAEs } from '../constants';
 import { sanitizeData, buildSql } from '../helpers';
-import { Cnaes, Paises } from '../interfaces';
+import { Cnaes } from '../interfaces';
 
 export class CNAEsProvider {
   build = (data: string[]): Cnaes => {
@@ -14,7 +14,7 @@ export class CNAEsProvider {
     return buildSql<Cnaes>('INSERT INTO', 'CNAEs', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }

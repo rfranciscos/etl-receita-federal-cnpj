@@ -8,42 +8,42 @@ export class ReceitaFederal {
     this.streamFile = new StreamFile(path);
   }
 
-  qualificacaoSocios = () => {
+  qualificacaoSocios = (): void => {
     const qualificacaoSociosProvider = new QualificacaoSociosProvider();
     this.streamFile.readLineAsync(qualificacaoSociosProvider.getSql, 'qualificacao-socios');
   }
 
-  paises = () => {
+  paises = (): void => {
     const paisesProvider = new PaisesProvider();
     this.streamFile.readLineAsync(paisesProvider.getSql, 'paises');
   }
 
-  municipios = () => {
+  municipios = (): void => {
     const municipiosProvider = new MunicipiosProvider();
     this.streamFile.readLineAsync(municipiosProvider.getSql, 'municipios');
   }
 
-  naturezasJuridicas = () => {
+  naturezasJuridicas = (): void => {
     const naturezasJuridicasProvider = new NaturezasJuridicasProvider();
     this.streamFile.readLineAsync(naturezasJuridicasProvider.getSql, 'naturezas-juridicas');
   }
 
-  cnaes = () => {
+  cnaes = (): void => {
     const cnaesProvider = new CNAEsProvider();
     this.streamFile.readLineAsync(cnaesProvider.getSql, 'cnaes');
   }
 
-  estabelecimentos = () => {
+  estabelecimentos = (): void => {
     const estabelecimentosProvider = new EstabelecimentosProvider();
     this.streamFile.readLineAsync(estabelecimentosProvider.getSql, 'estabelecimentos');
   }
 
-  socios = () => {
+  socios = (): void => {
     const sociosProvider = new SociosProvider();
     this.streamFile.readLineAsync(sociosProvider.getSql, 'socios');
   }
-  
-  empresas = () => {
+
+  empresas = (): void => {
     const empresasProvider = new EmpresasProvider();
     this.streamFile.readLineAsync(empresasProvider.getSql, 'empresas');
   }

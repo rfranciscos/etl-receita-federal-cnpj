@@ -10,7 +10,7 @@ const ensureDirectoryExistence = (filePath: string) => {
   fs.mkdirSync(dirname);
 }
 
-export const saveFile = (nameFile: string, data: any) => {
+export const saveFile = (nameFile: string, data: string): void => {
   const pathFile = `./temp/${nameFile}.sql`
   ensureDirectoryExistence(pathFile)
   return fs.writeFile(pathFile, data, err => err ? console.log(err): null);

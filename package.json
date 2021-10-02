@@ -6,7 +6,7 @@
   "scripts": {
     "bin": "tsc && node ./bin/cli",
     "prepare": "tsc",
-    "lint": "tslint --project tsconfig.json -t codeframe \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint . --ext .ts",
     "prebuild": "rimraf dist",
     "build": "npm run lint && tsc",
     "test": "jest --coverage --no-cache",
@@ -46,6 +46,9 @@
     "node": "^15.11.0"
   },
   "devDependencies": {
-    "@types/node": "^16.9.6"
+    "@types/node": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0"
   }
 }

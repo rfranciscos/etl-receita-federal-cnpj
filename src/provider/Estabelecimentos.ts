@@ -41,7 +41,7 @@ export class EstabelecimentosProvider {
     return buildSql<Estabelecimentos>('INSERT INTO', 'Estabelecimentos', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }

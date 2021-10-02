@@ -1,6 +1,6 @@
 import { formatSqlProp } from './formatSqlProp';
 
-export const buildSql = <T>(operation: 'INSERT INTO' | 'UPDATE', table: string, data: T) => {
+export const buildSql = <T>(operation: 'INSERT INTO' | 'UPDATE', table: string, data: T): string => {
   if (typeof data !== 'object') throw Error('Data must be a object =/');
   const keys = Object.keys(data);
   const values = Object.values(data).map(value => formatSqlProp(value));

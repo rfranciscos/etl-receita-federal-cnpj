@@ -19,7 +19,7 @@ export class EmpresasProvider {
     return buildSql<Empresas>('INSERT INTO', 'Empresas', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }

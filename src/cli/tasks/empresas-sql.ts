@@ -10,8 +10,8 @@ export const flags = {
   '--help, -h': 'Shows this help'
 };
 export const example = `$ npm run bin empresas-sql`;
- 
-export const execute = () => {
+
+export const execute = (): void => {
   const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/K3241.K03200Y0.D10911.EMPRECSV');
   receita.empresas();
 };

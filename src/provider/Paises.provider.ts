@@ -14,7 +14,7 @@ export class PaisesProvider {
     return buildSql<Paises>('INSERT INTO', 'Paises', data);
   }
 
-  getSql = (data: string[]) => {
+  getSql = (data: string[]): string => {
     const payload = this.build(data);
     return this.buildInsertQuery(payload);
   }
