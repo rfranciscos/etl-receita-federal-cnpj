@@ -1,9 +1,10 @@
 export interface Empresas {
-  cnpjBasico: string;
+  id: string;
+  prefixoCnpj: string;
   razaoSocial: string;
-  naturezaJuridicaId: string;
-  qualificacaoResponsavelId: string;
-  capitalSocial: string;
-  porteId: string;
+  naturezaJuridica: string;
+  qualificacaoResponsavel: string;
+  capitalSocial: number;
+  porte: string;
   enteFederativoResponsavel: string;
 }
