@@ -1,18 +1,28 @@
 import { EEmpresas } from '../constants';
-import { sanitizeData, buildSql } from '../helpers';
-import { Empresas } from '../interfaces';
+import { sanitizeData, buildSql, findEnumValue } from '../helpers';
+import { Empresas, IDbEnum } from '../interfaces';
 import { uuid } from 'uuidv4';
 
 export class EmpresasProvider {
+  naturezasJuridicas: IDbEnum[]
+  qualificacoesSocios: IDbEnum[]
+  portesEmpresas: IDbEnum[]
+
+  constructor(naturezasJuridicas, qualificacoesSocios, portesEmpresas) {
+    this.naturezasJuridicas = naturezasJuridicas;
+    this.qualificacoesSocios = qualificacoesSocios
+    this.portesEmpresas = portesEmpresas
+  }
+
   build = (data: string[]): Empresas => {
     return {
       id: uuid(),
       prefixoCnpj: sanitizeData(data[EEmpresas.CNPJ_BASICO]) as string,
       razaoSocial: sanitizeData(data[EEmpresas.RAZAO_SOCIAL_NOME_EMPRESARIAL]) as string,
-      naturezaJuridica: sanitizeData(data[EEmpresas.NATUREZA_JURIDICA]) as string,
-      qualificacaoResponsavel: sanitizeData(data[EEmpresas.QUALIFICACAO_DO_RESPONSAVEL]) as string,
+      naturezaJuridica: findEnumValue(sanitizeData(data[EEmpresas.NATUREZA_JURIDICA]) as string, this.naturezasJuridicas),
+      qualificacaoResponsavel: findEnumValue(sanitizeData(data[EEmpresas.QUALIFICACAO_DO_RESPONSAVEL]) as string, this.qualificacoesSocios),
       capitalSocial: sanitizeData(data[EEmpresas.CAPITAL_SOCIAL_DA_EMPRESA], 'number') as number,
-      porte: sanitizeData(data[EEmpresas.PORTE_DA_EMPRESA]) as string,
+      porte: findEnumValue(sanitizeData(data[EEmpresas.PORTE_DA_EMPRESA]) as string, this.portesEmpresas),
       enteFederativoResponsavel: sanitizeData(data[EEmpresas.ENTE_FEDERATIVO_RESPONSAVEL]) as string,
     };
   }

@@ -9,3 +9,4 @@ export * from './naturezasJuridicas.interface';
 export * from './estabelecimentos.interface';
 export * from './socios.interface';
 export * from './empresas.interface';
+export * from './dbEnum';

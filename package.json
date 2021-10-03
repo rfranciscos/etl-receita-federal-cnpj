@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/rfranciscos/script-template#readme",
   "dependencies": {
+    "axios": "^0.22.0",
     "cli-task": "^0.7.5",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.0.5",

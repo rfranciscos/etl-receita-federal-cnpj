@@ -1,17 +1,19 @@
 import { ENaturezasJuridicas } from '../constants';
-import { sanitizeData, buildSql } from '../helpers';
+import { sanitizeData, buildSql, normalizeEnumValue } from '../helpers';
 import { NaturezasJuridicas } from '../interfaces';
 
 export class NaturezasJuridicasProvider {
   build = (data: string[]): NaturezasJuridicas => {
+    const codigo = sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string;
+    const descricao = sanitizeData(data[ENaturezasJuridicas.DESCRICAO]) as string;
     return {
-      id: sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string,
-      description: sanitizeData(data[ENaturezasJuridicas.DESCRICAO]) as string,
+      valor: normalizeEnumValue(descricao),
+      descricao: `${codigo} - ${descricao}`,
     };
   }
 
   buildInsertQuery = (data: NaturezasJuridicas): string => {
-    return buildSql<NaturezasJuridicas>('INSERT INTO', 'NaturezasJuridicas', data);
+    return buildSql<NaturezasJuridicas>('INSERT INTO', 'ENaturezasJuridicas', data);
   }
 
   getSql = (data: string[]): string => {

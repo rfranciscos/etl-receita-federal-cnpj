@@ -12,6 +12,6 @@ export const flags = {
 export const example = `$ npm run bin naturezas-juridicas-sql`;
 
 export const execute = (): void => {
-  const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/F.K03200$Z.D10911.NATJUCSV');
+  const receita = new ReceitaFederal('/Users/renansoaresfrancisco/dev/personal/etl-receita-federal-cnpj/data/F.K03200$Z.D10911.NATJUCSV');
   receita.naturezasJuridicas();
 };

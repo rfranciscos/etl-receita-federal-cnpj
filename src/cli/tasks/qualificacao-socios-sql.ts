@@ -1,4 +1,5 @@
 import { ReceitaFederal } from '../..';
+import path from 'path';
 
 export const description =
   'Receives a file path and build all rows in a insert query of QualificacaoSocios';
@@ -12,6 +13,6 @@ export const flags = {
 export const example = `$ npm run bin qualificacao-socios-sql`;
 
 export const execute = (): void => {
-  const receita = new ReceitaFederal('/home/renan/dev/personal/etl-receita-federal-cnpj/data/F.K03200$Z.D10814.QUALSCSV');
+  const receita = new ReceitaFederal(`${path.join(__dirname, '../../..')}/data/F.K03200$Z.D10911.QUALSCSV`);
   receita.qualificacaoSocios();
 };

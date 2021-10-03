@@ -1,4 +1,4 @@
 export interface QualificacaoSocios {
-  id: string;
-  description: string;
+  valor: string;
+  descricao: string;
 }
