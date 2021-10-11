@@ -1,4 +1,4 @@
 export interface Cnaes {
-  id: string;
-  description: string;
+  valor: string;
+  descricao: string;
 }

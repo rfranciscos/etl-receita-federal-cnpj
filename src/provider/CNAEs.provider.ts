@@ -4,14 +4,16 @@ import { Cnaes } from '../interfaces';
 
 export class CNAEsProvider {
   build = (data: string[]): Cnaes => {
+    const code = sanitizeData(data[ECNAEs.CODIGO]) as string
+    const description = sanitizeData(data[ECNAEs.DESCRICAO]) as string
     return {
-      id: sanitizeData(data[ECNAEs.CODIGO]) as string,
-      description: sanitizeData(data[ECNAEs.DESCRICAO]) as string,
+      valor: code,
+      descricao: `${code} - ${description}`,
     };
   }
 
   buildInsertQuery = (data: Cnaes): string => {
-    return buildSql<Cnaes>('INSERT INTO', 'CNAEs', data);
+    return buildSql<Cnaes>('INSERT INTO', 'ECNAEs', data);
   }
 
   getSql = (data: string[]): string => {
