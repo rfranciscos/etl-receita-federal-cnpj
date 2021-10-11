@@ -15,4 +15,24 @@ export class EnumsService {
     const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/porte-empresas');
     return response.data.EPorteEmpresa
   }
+
+  tipoPessoaJuridica = async () => {
+    const response = await axios.get<{ ETipoPessoaJuridica: []}>('http://localhost:8080/api/rest/tipo-pessoa-juridica');
+    return response.data.ETipoPessoaJuridica
+  }
+
+  tipoSituacao = async () => {
+    const response = await axios.get<{ ETipoSituacoesCadastrais: []}>('http://localhost:8080/api/rest/porte-empresas');
+    return response.data.ETipoSituacoesCadastrais
+  }
+
+  tipoMotivoSituacao = async () => {
+    const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/tipo-situacoes-cadastrais');
+    return response.data.EPorteEmpresa
+  }
+
+  tipoPais = async () => {
+    const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/tipo-pais');
+    return response.data.EPorteEmpresa
+  }
 }

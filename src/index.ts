@@ -34,9 +34,14 @@ export class ReceitaFederal {
     this.streamFile.readLineAsync(cnaesProvider.getSql, 'cnaes');
   }
 
-  estabelecimentos = (): void => {
-    const estabelecimentosProvider = new EstabelecimentosProvider();
-    this.streamFile.readLineAsync(estabelecimentosProvider.getSql, 'estabelecimentos');
+  estabelecimentos = async (): Promise<void> => {
+    const enumService = new EnumsService();
+    const tipoPessoaJuridica = await enumService.tipoPessoaJuridica()
+    const tipoSituacao = await enumService.tipoSituacao()
+    const tipoMotivoSituacao = await enumService.tipoMotivoSituacao()
+    const tipoPais = await enumService.tipoPais()
+    const estabelecimentosProvider = new EstabelecimentosProvider(tipoPessoaJuridica, tipoSituacao, tipoMotivoSituacao, tipoPais);
+    this.streamFile.readLineWithMultiplesEntitiesAsync(estabelecimentosProvider.getSql, 'estabelecimentos', 1000);
   }
 
   socios = (): void => {

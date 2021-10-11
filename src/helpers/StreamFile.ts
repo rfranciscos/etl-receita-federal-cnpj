@@ -15,13 +15,13 @@ export class StreamFile {
     this.numberOfLines = 0;
   }
 
-  readLineAsync = (inputFunction: (data: string[]) => string, prefix: string): void => {
+  readLineAsync = (inputFunction: (data: string[]) => string, prefix: string, insertsNumber?: number): void => {
     let data = [] as string[];
     this.rl.on('line', (line) => {
       const query = inputFunction(line.split('";"'));
       data.push(query);
       this.numberOfLines++;
-      if (this.numberOfLines === 10000) {
+      if (this.numberOfLines === (insertsNumber || 10000)) {
         saveFile(`${prefix}-${this.cycle}.sql`, data.join(''))
         this.cycle += 1;
         this.numberOfLines = 0;
@@ -29,13 +29,44 @@ export class StreamFile {
       }
     });
     this.rl.on('close', () => {
-      if (this.numberOfLines !== 10000) {
+      if (this.numberOfLines !== (insertsNumber || 10000)) {
         saveFile(`${prefix}-${this.cycle}.sql`, data.join(''))
         this.cycle += 1;
         this.numberOfLines = 0;
         data = [];
-        console.log(this.cycle * 10000 + this.numberOfLines)
+        console.log(this.cycle * (insertsNumber || 10000) + this.numberOfLines)
       }
   });
+  }
+
+  readLineWithMultiplesEntitiesAsync = (inputFunction: (data: string[]) => { type: string, data: string }[], prefix: string, insertsNumber?: number): void => {
+    let data = {} as { [key: string]: string[]};
+    this.rl.on('line', (line) => {
+      const query = inputFunction(line.split('";"'));
+      query.forEach(item => {
+        if (!data[item.type]) data[item.type] = []
+        data[item.type].push(item.data)
+      })
+      this.numberOfLines++;
+      if (this.numberOfLines === (insertsNumber || 10000)) {
+        Object.keys(data).forEach(item => {
+          saveFile(`${prefix}-${this.cycle}.sql`, data[item].join(''))
+        })
+        this.cycle += 1;
+        this.numberOfLines = 0;
+        data = {};
+      }
+    });
+    this.rl.on('close', () => {
+      if (this.numberOfLines !== (insertsNumber || 10000)) {
+        Object.keys(data).forEach(item => {
+          saveFile(`${prefix}-${this.cycle}.sql`, data[item].join(''))
+        })
+        this.cycle += 1;
+        this.numberOfLines = 0;
+        data = {};
+        console.log(this.cycle * (insertsNumber || 10000) + this.numberOfLines)
+      }
+    });
   }
 }
