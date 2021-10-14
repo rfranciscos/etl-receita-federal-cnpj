@@ -4,11 +4,11 @@ import { QualificacaoSocios } from '../interfaces';
 
 export class QualificacaoSociosProvider {
   build = (data: string[]): QualificacaoSocios => {
-    const codigo = sanitizeData(data[EQualificacaoSocios.CODIGO]) as string;
-    const descricao = sanitizeData(data[EQualificacaoSocios.DESCRICAO]) as string;
+    const code = sanitizeData(data[EQualificacaoSocios.CODIGO]) as string;
+    const description = sanitizeData(data[EQualificacaoSocios.DESCRICAO]) as string;
     return {
-      valor: normalizeEnumValue(descricao),
-      descricao: `${codigo} - ${descricao}`,
+      valor: normalizeEnumValue(`${description}_${code}`),
+      descricao: `${code} - ${description}`,
     };
   }
 

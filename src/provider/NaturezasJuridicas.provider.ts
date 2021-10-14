@@ -4,11 +4,11 @@ import { NaturezasJuridicas } from '../interfaces';
 
 export class NaturezasJuridicasProvider {
   build = (data: string[]): NaturezasJuridicas => {
-    const codigo = sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string;
-    const descricao = sanitizeData(data[ENaturezasJuridicas.DESCRICAO]) as string;
+    const code = sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string;
+    const description = sanitizeData(data[ENaturezasJuridicas.DESCRICAO]) as string;
     return {
-      valor: normalizeEnumValue(descricao),
-      descricao: `${codigo} - ${descricao}`,
+      valor: normalizeEnumValue(`${description}_${code}`),
+      descricao: `${code} - ${description}`,
     };
   }
 

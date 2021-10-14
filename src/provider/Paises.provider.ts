@@ -1,17 +1,19 @@
 import { EPaises } from '../constants';
-import { sanitizeData, buildSql } from '../helpers';
+import { sanitizeData, buildSql, normalizeEnumValue } from '../helpers';
 import { Paises } from '../interfaces';
 
 export class PaisesProvider {
   build = (data: string[]): Paises => {
+    const code = sanitizeData(data[EPaises.CODIGO]) as string;
+    const description = sanitizeData(data[EPaises.DESCRICAO]) as string;
     return {
-      id: sanitizeData(data[EPaises.CODIGO]) as string,
-      description: sanitizeData(data[EPaises.DESCRICAO]) as string,
+      valor: normalizeEnumValue(`${description}_${code}`),
+      descricao: `${code} - ${description}`,
     };
   }
 
   buildInsertQuery = (data: Paises): string => {
-    return buildSql<Paises>('INSERT INTO', 'Paises', data);
+    return buildSql<Paises>('INSERT INTO', 'EPaises', data);
   }
 
   getSql = (data: string[]): string => {

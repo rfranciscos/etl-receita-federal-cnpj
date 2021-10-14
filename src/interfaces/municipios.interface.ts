@@ -1,4 +1,4 @@
 export interface Municipios {
-  code: string;
-  description: string;
+  valor: string;
+  descricao: string;
 }

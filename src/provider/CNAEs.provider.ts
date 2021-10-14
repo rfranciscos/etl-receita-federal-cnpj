@@ -1,5 +1,5 @@
 import { ECNAEs } from '../constants';
-import { sanitizeData, buildSql } from '../helpers';
+import { sanitizeData, buildSql, normalizeEnumValue } from '../helpers';
 import { Cnaes } from '../interfaces';
 
 export class CNAEsProvider {
@@ -7,7 +7,7 @@ export class CNAEsProvider {
     const code = sanitizeData(data[ECNAEs.CODIGO]) as string
     const description = sanitizeData(data[ECNAEs.DESCRICAO]) as string
     return {
-      valor: code,
+      valor: normalizeEnumValue(`${description}_${code}`),
       descricao: `${code} - ${description}`,
     };
   }
