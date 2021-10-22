@@ -1,3 +1,4 @@
 table:
   name: ECNAEs
   schema: public
+is_enum: true

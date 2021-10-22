@@ -7,7 +7,7 @@ export class NaturezasJuridicasProvider {
     const code = sanitizeData(data[ENaturezasJuridicas.CODIGO]) as string;
     const description = sanitizeData(data[ENaturezasJuridicas.DESCRICAO]) as string;
     return {
-      valor: normalizeEnumValue(`${description}_${code}`),
+      valor: `CODE_${code}`,
       descricao: `${code} - ${description}`,
     };
   }

@@ -1,0 +1,4 @@
+table:
+  name: ETipoMotivoSituacoesCadastrais
+  schema: public
+is_enum: true

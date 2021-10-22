@@ -1,5 +1,5 @@
 import { EEstabelecimentos } from '../constants';
-import { sanitizeData, buildSql } from '../helpers';
+import { sanitizeData, buildSql, findEnumValue } from '../helpers';
 import {
   IDbEnum,
   IEndereco, IPessoa,
@@ -43,17 +43,17 @@ export class EstabelecimentosProvider {
     return {
       id: uuid(),
       cnpj: `${cnpjBasico}${cnpjOrdem}${cnpjDv}`,
-      tipo: sanitizeData(data[EEstabelecimentos.IDENTIFICADOR]) as string,
-      situacao: sanitizeData(data[EEstabelecimentos.SITUACAO_CADASTRAL]) as string,
+      tipo: findEnumValue(sanitizeData(data[EEstabelecimentos.IDENTIFICADOR]) as string, this.tipoPessoaJuridica) as string,
+      situacao: findEnumValue(sanitizeData(data[EEstabelecimentos.SITUACAO_CADASTRAL]) as string, this.tipoSituacao) as string,
       dataSituacao: sanitizeData(data[EEstabelecimentos.DATA_SITUACAO_CADASTRAL], 'date') as string,
-      motivoSituacao: sanitizeData(data[EEstabelecimentos.MOTIVO_SITUACAO_CADASTRAL]) as string,
+      motivoSituacao: findEnumValue(sanitizeData(data[EEstabelecimentos.MOTIVO_SITUACAO_CADASTRAL]) as string, this.tipoMotivoSituacao) as string,
       cidadeExterior: sanitizeData(data[EEstabelecimentos.NOME_DA_CIDADE_NO_EXTERIOR]) as string,
-      pais: sanitizeData(data[EEstabelecimentos.PAIS]) as string,
+      pais: findEnumValue(sanitizeData(data[EEstabelecimentos.PAIS]) as string, this.tipoPais, true) as string,
       dataInicioAtividade: sanitizeData(data[EEstabelecimentos.DATA_DE_INICIO_ATIVIDADE], 'date') as string,
       situacaoEspecial: sanitizeData(data[EEstabelecimentos.SITUACAO_ESPECIAL]) as string,
       dataSituacaoEspecial: sanitizeData(data[EEstabelecimentos.DATA_DA_SITUACAO_ESPECIAL], 'date') as string,
       enderecoId,
-      empresaId: 'NULL',
+      prefixoCnpj: cnpjBasico,
       nomeFantasia: sanitizeData(data[EEstabelecimentos.NOME_FANTASIA]) as string
     };
   }
@@ -141,9 +141,9 @@ export class EstabelecimentosProvider {
     const atividades = this.buildAtividades(data, pessoaJuridica.id);
     const pessoa = this.buildPessoa(pessoaJuridica.id);
     return [
-      {data: endereco, type:'Endereco'},
+      {data: endereco, type:'Enderecos'},
       {data: pessoaJuridica, type:'PessoaJuridica'},
-      {data: pessoa, type:'Pessoa'},
+      {data: pessoa, type:'Pessoas'},
       ...contatos,
       ...atividades
     ]

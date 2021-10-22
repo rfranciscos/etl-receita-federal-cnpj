@@ -12,7 +12,7 @@ export const flags = {
 };
 export const example = `$ npm run bin estabelecimentos-sql`;
 
-export const execute = (): void => {
+export const execute = async (): Promise<void> => {
   const receita = new ReceitaFederal(`${path.join(__dirname, '../../..')}/data/K3241.K03200Y0.D10911.ESTABELE`);
-  receita.estabelecimentos();
+  await receita.estabelecimentos();
 };

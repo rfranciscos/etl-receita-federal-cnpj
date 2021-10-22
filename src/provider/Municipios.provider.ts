@@ -7,7 +7,7 @@ export class MunicipiosProvider {
     const code = sanitizeData(data[EMunicipios.CODIGO]) as string;
     const description = sanitizeData(data[EMunicipios.DESCRICAO]) as string
     return {
-      valor: normalizeEnumValue(`${description}_${code}`),
+      valor: `CODE_${code}`,
       descricao: `${code} - ${description}`,
     };
   }

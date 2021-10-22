@@ -7,7 +7,7 @@ export class CNAEsProvider {
     const code = sanitizeData(data[ECNAEs.CODIGO]) as string
     const description = sanitizeData(data[ECNAEs.DESCRICAO]) as string
     return {
-      valor: normalizeEnumValue(`${description}_${code}`),
+      valor: `CODE_${code}`,
       descricao: `${code} - ${description}`,
     };
   }

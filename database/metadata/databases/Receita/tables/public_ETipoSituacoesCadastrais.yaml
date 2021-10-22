@@ -1,3 +1,4 @@
 table:
   name: ETipoSituacoesCadastrais
   schema: public
+is_enum: true

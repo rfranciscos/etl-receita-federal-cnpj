@@ -28,7 +28,7 @@ export interface IPessoaJuridica {
   situacaoEspecial: string;
   dataSituacaoEspecial: string;
   enderecoId: string;
-  empresaId: string;
+  prefixoCnpj: string;
   nomeFantasia: string;
 }
 

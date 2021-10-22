@@ -50,7 +50,7 @@ export class StreamFile {
       this.numberOfLines++;
       if (this.numberOfLines === (insertsNumber || 10000)) {
         Object.keys(data).forEach(item => {
-          saveFile(`${prefix}-${this.cycle}.sql`, data[item].join(''))
+          saveFile(`${prefix}-${item}-${this.cycle}.sql`, data[item].join(''))
         })
         this.cycle += 1;
         this.numberOfLines = 0;

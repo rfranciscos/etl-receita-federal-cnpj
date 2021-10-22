@@ -1,1 +1,59 @@
-[]
+- name: allowed-queries
+  definition:
+    queries:
+    - name: Qualificação Socios
+      query: |-
+        query getQualificacoesSocios {
+          EQualificacaoSocios {
+            valor
+            descricao
+          }
+        }
+    - name: Porte Empresas
+      query: |-
+        query getPorteEmpresas {
+          EPorteEmpresa {
+            valor
+            descricao
+          }
+        }
+    - name: get natureza juridica
+      query: |-
+        query getNaturezasJuridicas {
+          ENaturezasJuridicas {
+            valor
+            descricao
+          }
+        }
+    - name: TipoPessoaJuridica
+      query: |-
+        query TipoPessoaJuridica {
+          ETipoPessoaJuridica {
+            valor
+            descricao
+          }
+        }
+    - name: Tipo Situacoes Cadastrais
+      query: |-
+        query TipoSituacaoCadastral {
+          ETipoSituacoesCadastrais {
+            valor
+            descricao
+          }
+        }
+    - name: Tipo Motivo Situacoes Cadastrais
+      query: |-
+        query TipoMotivoSituacaoCadastral {
+          ETipoMotivoSituacoesCadastrais {
+            valor
+            descricao
+          }
+        }
+    - name: Tipo Pais
+      query: |-
+        query TipoPais {
+          EPaises {
+            valor
+            descricao
+          }
+        }

@@ -1,5 +1,15 @@
 import { StreamFile } from './helpers';
-import { CNAEsProvider, EmpresasProvider, EstabelecimentosProvider, MunicipiosProvider, NaturezasJuridicasProvider, PaisesProvider, QualificacaoSociosProvider, SociosProvider } from './provider';
+import {
+  CNAEsProvider,
+  EmpresasProvider,
+  EstabelecimentosProvider,
+  MotivoSituacoesCadastraisProvider,
+  MunicipiosProvider,
+  NaturezasJuridicasProvider,
+  PaisesProvider,
+  QualificacaoSociosProvider,
+  SociosProvider
+} from './provider';
 import { EnumsService } from './Services';
 
 export class ReceitaFederal {
@@ -56,5 +66,10 @@ export class ReceitaFederal {
     const portesEmpresas = await enumService.porteEmpresa()
     const empresasProvider = new EmpresasProvider(naturezasJuridicas, qualificacaoSocios, portesEmpresas);
     this.streamFile.readLineAsync(empresasProvider.getSql, 'empresas');
+  }
+
+  motivoSituacoesCadastrais = (): void => {
+    const cnaesProvider = new MotivoSituacoesCadastraisProvider();
+    this.streamFile.readLineAsync(cnaesProvider.getSql, 'motivo-situacoes-cadastrais');
   }
 }

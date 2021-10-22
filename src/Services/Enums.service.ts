@@ -12,7 +12,7 @@ export class EnumsService {
   }
 
   porteEmpresa = async () => {
-    const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/porte-empresas');
+    const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/portes-empresas');
     return response.data.EPorteEmpresa
   }
 
@@ -22,17 +22,17 @@ export class EnumsService {
   }
 
   tipoSituacao = async () => {
-    const response = await axios.get<{ ETipoSituacoesCadastrais: []}>('http://localhost:8080/api/rest/porte-empresas');
+    const response = await axios.get<{ ETipoSituacoesCadastrais: []}>('http://localhost:8080/api/rest/tipo-situacoes-cadastrais');
     return response.data.ETipoSituacoesCadastrais
   }
 
   tipoMotivoSituacao = async () => {
-    const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/tipo-situacoes-cadastrais');
-    return response.data.EPorteEmpresa
+    const response = await axios.get<{ ETipoMotivoSituacoesCadastrais: []}>('http://localhost:8080/api/rest/tipo-motivo-situacoes-cadastrais');
+    return response.data.ETipoMotivoSituacoesCadastrais
   }
 
   tipoPais = async () => {
-    const response = await axios.get<{ EPorteEmpresa: []}>('http://localhost:8080/api/rest/tipo-pais');
-    return response.data.EPorteEmpresa
+    const response = await axios.get<{ EPaises: []}>('http://localhost:8080/api/rest/tipo-pais');
+    return response.data.EPaises
   }
 }

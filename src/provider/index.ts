@@ -6,3 +6,4 @@ export * from './NaturezasJuridicas.provider';
 export * from './Estabelecimentos';
 export * from './Socios.Provider';
 export * from './Empresas.Provider';
+export * from './MotivoSituacoesCadastrais.provider'

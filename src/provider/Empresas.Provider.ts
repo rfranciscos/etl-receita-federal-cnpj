@@ -19,10 +19,10 @@ export class EmpresasProvider {
       id: uuid(),
       prefixoCnpj: sanitizeData(data[EEmpresas.CNPJ_BASICO]) as string,
       razaoSocial: sanitizeData(data[EEmpresas.RAZAO_SOCIAL_NOME_EMPRESARIAL]) as string,
-      naturezaJuridica: findEnumValue(sanitizeData(data[EEmpresas.NATUREZA_JURIDICA]) as string, this.naturezasJuridicas),
-      qualificacaoResponsavel: findEnumValue(sanitizeData(data[EEmpresas.QUALIFICACAO_DO_RESPONSAVEL]) as string, this.qualificacoesSocios),
+      naturezaJuridica: findEnumValue(sanitizeData(data[EEmpresas.NATUREZA_JURIDICA]) as string, this.naturezasJuridicas) as string,
+      qualificacaoResponsavel: findEnumValue(sanitizeData(data[EEmpresas.QUALIFICACAO_DO_RESPONSAVEL]) as string, this.qualificacoesSocios) as string,
       capitalSocial: sanitizeData(data[EEmpresas.CAPITAL_SOCIAL_DA_EMPRESA], 'number') as number,
-      porte: findEnumValue(sanitizeData(data[EEmpresas.PORTE_DA_EMPRESA]) as string, this.portesEmpresas),
+      porte: findEnumValue(sanitizeData(data[EEmpresas.PORTE_DA_EMPRESA]) as string, this.portesEmpresas) as string,
       enteFederativoResponsavel: sanitizeData(data[EEmpresas.ENTE_FEDERATIVO_RESPONSAVEL]) as string,
     };
   }

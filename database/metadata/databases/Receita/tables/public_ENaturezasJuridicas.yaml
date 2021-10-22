@@ -1,3 +1,4 @@
 table:
   name: ENaturezasJuridicas
   schema: public
+is_enum: true

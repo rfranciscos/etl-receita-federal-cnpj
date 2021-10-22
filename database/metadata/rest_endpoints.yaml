@@ -1,1 +1,63 @@
-[]
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: get natureza juridica
+  url: naturezas-juridicas
+  methods:
+  - GET
+  name: get natureza juridica
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Porte Empresas
+  url: portes-empresas
+  methods:
+  - GET
+  name: Porte Empresas
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Qualificação Socios
+  url: qualificacoes-socios
+  methods:
+  - GET
+  name: Qualificação Socios
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Tipo Motivo Situacoes Cadastrais
+  url: tipo-motivo-situacoes-cadastrais
+  methods:
+  - GET
+  name: Tipo Motivo Situacoes Cadastrais
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Tipo Pais
+  url: tipo-pais
+  methods:
+  - GET
+  name: Tipo Pais
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: TipoPessoaJuridica
+  url: tipo-pessoa-juridica
+  methods:
+  - GET
+  name: TipoPessoaJuridica
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Tipo Situacoes Cadastrais
+  url: tipo-situacoes-cadastrais
+  methods:
+  - GET
+  name: Tipo Situacoes Cadastrais
+  comment: null

@@ -1,3 +1,4 @@
 table:
   name: EPorteEmpresa
   schema: public
+is_enum: true

@@ -7,7 +7,7 @@ export class QualificacaoSociosProvider {
     const code = sanitizeData(data[EQualificacaoSocios.CODIGO]) as string;
     const description = sanitizeData(data[EQualificacaoSocios.DESCRICAO]) as string;
     return {
-      valor: normalizeEnumValue(`${description}_${code}`),
+      valor: `CODE_${code}`,
       descricao: `${code} - ${description}`,
     };
   }

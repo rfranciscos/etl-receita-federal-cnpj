@@ -1,0 +1,29 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('RO', 'Rondônia');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('AC', 'Acre');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('AM', 'Amazonas');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('RR', 'Roraima');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('PA', 'Pará');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('AP', 'Amapá');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('TO', 'Tocantins');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('MA', 'Maranhão');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('PI', 'Piauí');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('CE', 'Ceará');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('RN', 'Rio Grande do Norte');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('PB', 'Paraíba');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('PE', 'Pernambuco');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('AL', 'Alagoas');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('SE', 'Sergipe');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('BA', 'Bahia');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('MG', 'Minas Gerais');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('ES', 'Espírito Santo');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('RJ', 'Rio de Janeiro');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('SP', 'São Paulo');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('PR', 'Paraná');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('SC', 'Santa Catarina');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('RS', 'Rio Grande do Sul');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('MS', 'Mato Grosso do Sul');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('MT', 'Mato Grosso');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('GO', 'Goiás');
+-- INSERT INTO PUBLIC."EUF" ("valor", "descricao") VALUES ('DF', 'Distrito Federal');

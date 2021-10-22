@@ -7,7 +7,7 @@ export class PaisesProvider {
     const code = sanitizeData(data[EPaises.CODIGO]) as string;
     const description = sanitizeData(data[EPaises.DESCRICAO]) as string;
     return {
-      valor: normalizeEnumValue(`${description}_${code}`),
+      valor: `CODE_${code}`,
       descricao: `${code} - ${description}`,
     };
   }
